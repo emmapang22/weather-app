@@ -7,12 +7,33 @@
     <title>weather_app</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
-  <body>
-    <div id="app">
-      <h1 class="text-white text-9xl">Hello</h1>
-      <input type="text" id="cityInput" placeholder="Enter city..." />
-      <button type="button" id="searchBtn">Search City</button>
-      
+  <body
+    class="flex flex-col items-center justify-center bg-sky-100 text-gray-800 min-h-screen"
+  >
+    <section
+      id="weatherSection"
+      class="flex flex-col items-center justify-center gap-4"
+    >
+      <h1 class="text-3xl font-bold">Weather App</h1>
+
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city..."
+        class="p-2 rounded border"
+      />
+
+      <button
+        type="button"
+        id="searchBtn"
+        class="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800"
+      >
+        Search City
+      </button>
+    </section>
+
+    <section id="displayWeather" class="mt-6 text-center"></section>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
