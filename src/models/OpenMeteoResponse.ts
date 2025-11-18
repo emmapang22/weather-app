@@ -1,10 +1,10 @@
-import type { Country } from "./Country";
+import type { Coordinates } from "./Coordinates";
 import type { CurrentWeather } from "./CurrentWeather";
 
 export type OpenMeteoResponse = {
-  current_units: CurrentWeather[];
+  current: CurrentWeather;
 };
 
 export type GeoResponse = {
-  results: Country[];
+  results: Coordinates[];
 };
