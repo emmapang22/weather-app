@@ -1,8 +1,8 @@
-import { createHtml, showError } from "./htmlUtils";
+import { createHtml } from "./utils/htmlUtils";
 import { getCoordinates, getWeather } from "./services/weatherService";
 import "./style.css";
+import { showError } from "./utils/createHtmlErrorMsg";
 
-// finds the form with id searchForm and adds a click event to it
 document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -11,26 +11,24 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   let citySearch = "";
 
   if (inputCity) {
-    citySearch = (inputCity as HTMLInputElement).value.trim(); // removes spaces from the start and end of the string
-  } else {
-    showError("Please enter a city name."); // this message will show if there's nothing in the input field
+    citySearch = (inputCity as HTMLInputElement).value.trim();
+  }
+
+  if (!citySearch) {
+    showError("Please enter a city name.");
     return;
   }
 
   const location = await getCoordinates(citySearch);
+
   if (!location) {
-    showError("City not found."); // this message will show if the location is not found
+    showError("City not found.");
     return;
   }
 
   const weather = await getWeather(location.latitude, location.longitude);
 
-  createHtml(
-    location.name,
-    location.country,
-    weather.temperature,
-    weather.weatherCode
-  );
+  createHtml(location, weather);
 
   if (inputCity) {
     (inputCity as HTMLInputElement).value = "";
