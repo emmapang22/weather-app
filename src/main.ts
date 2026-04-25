@@ -2,6 +2,7 @@ import { createHtml } from "./utils/htmlUtils";
 import { getCoordinates, getWeather } from "./services/weatherService";
 import "./style.css";
 import { showError } from "./utils/createHtmlErrorMsg";
+import { dynamicBackgroundColors } from "./utils/dynamicBackgroundColor";
 
 document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -34,3 +35,5 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
     (inputCity as HTMLInputElement).value = "";
   }
 });
+
+dynamicBackgroundColors();
