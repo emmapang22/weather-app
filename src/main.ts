@@ -16,15 +16,13 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   }
 
   if (!citySearch) {
-    showError("Please enter a city name.");
-    return;
+    return showError("Please enter a city name");
   }
 
   const location = await getCoordinates(citySearch);
 
   if (!location) {
-    showError("City not found.");
-    return;
+    return showError("City not found");
   }
 
   const weather = await getWeather(location.latitude, location.longitude);

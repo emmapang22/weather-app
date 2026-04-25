@@ -12,7 +12,7 @@ export const createHtml = (location: Coordinates, weather: CurrentWeather) => {
   }
 
   const weatherContainer = document.createElement("div");
-  weatherContainer.className = "bg-black/50 py-5 px-10 rounded";
+  weatherContainer.className = "bg-black/50 py-5 px-10 rounded w-sm";
 
   const cityTitle = document.createElement("h3");
   cityTitle.className = "text-xl font-bold";

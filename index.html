@@ -16,12 +16,13 @@
     >
       <h1 id="main-heading" class="text-3xl font-bold">Weather App</h1>
 
-      <form id="searchForm">
+      <form id="searchForm" class="flex flex-col w-sm">
+        <label for="cityInput" class="text-white mb-2">Enter a city:</label>
         <input
           type="text"
           id="cityInput"
-          placeholder="Enter city..."
-          class="p-2 rounded border bg-white"
+          placeholder="eg. Stockholm or New York"
+          class="p-2 rounded border bg-white mb-4"
         />
 
         <button
@@ -29,7 +30,7 @@
           id="searchBtn"
           class="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800 hover:cursor-pointer"
         >
-          Search City
+          Search city
         </button>
       </form>
     </section>
