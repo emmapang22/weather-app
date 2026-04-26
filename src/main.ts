@@ -1,6 +1,6 @@
+import "./style.css";
 import { createHtml } from "./utils/htmlUtils";
 import { getCoordinates, getWeather } from "./services/weatherService";
-import "./style.css";
 import { showError } from "./utils/createHtmlErrorMsg";
 import { dynamicBackgroundColors } from "./utils/dynamicBackgroundColor";
 
