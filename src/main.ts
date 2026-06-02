@@ -1,5 +1,5 @@
 import "./style.css";
-import { createHtml } from "./utils/htmlUtils";
+import { weatherCardHtml } from "./utils/weatherCardHtml";
 import { getCoordinates, getWeather } from "./services/weatherService";
 import { showError } from "./utils/createHtmlErrorMsg";
 import { dynamicBackgroundColors } from "./utils/dynamicBackgroundColor";
@@ -27,7 +27,7 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
 
   const weather = await getWeather(location.latitude, location.longitude);
 
-  createHtml(location, weather);
+  weatherCardHtml(location, weather);
 
   if (inputCity) {
     (inputCity as HTMLInputElement).value = "";
